@@ -15,7 +15,7 @@ set showmatch " 括弧入力時に対応する括弧を表示
 set number
 set ruler " ルーラー(右下の行,列番号)を表示
 "set list " タブや改行を表示
-set ignorecase " 検索時に大文字小文字を無視
+"set ignorecase " 検索時に大文字小文字を無視
 set smartcase " 大文字小文字の両方が含まれている場合は大文字小文字を区別
 set fileformats=unix,mac,dos " 改行コードの自動認識
 set nocompatible " vimの拡張機能をON
@@ -34,7 +34,6 @@ source ~/.mixivimrc
 
 
 " KeyMaps
-
 map <c-a> ^
 map <c-e> $
 
@@ -82,17 +81,25 @@ if has("syntax")
 endif
 
 
-" パッケージ名から定義箇所にジャンプする
+" パッケージ名から定義箇所にジャンプする - Jump2pmのショートカット
 noremap fg :call Jump2pm('vne')<ENTER>
 noremap ff :call Jump2pm('e')<ENTER>
 noremap fd :call Jump2pm('sp')<ENTER>
 noremap ft :call Jump2pm('tabe')<ENTER>
 
-"autocmd FileType perl :setlocal path+=~/git/mixi
+" fg : 縦分割
+" ff : ウィンドウ内表示
+" fd : 水平分割
+" ft : タブ分割
 
 
 " 文字コードの自動認識
 source $HOME/.vim/plugin/recognize_charcode.vim
+
+
+" 新規作成時にテンプレートを呼び出し
+autocmd BufNewFile *.pl 0r $HOME/.vim/template/perl.tmpl
+autocmd BufNewFile *.t 0r $HOME/.vim/template/perl.tmpl
 
 
 " 拡張子.tのファイルをperlコードとして認識する

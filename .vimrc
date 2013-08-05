@@ -7,6 +7,7 @@ set t_Co=256
 colorscheme desert
 set background=dark
 set tabstop=4
+set shiftwidth=4
 set expandtab
 set autoindent
 set backspace=2 " バックスペースでインデントや改行を削除できるようにする
@@ -129,7 +130,8 @@ NeoBundle 'Shougo/unite.vim.git'
 NeoBundle 'Shougo/neocomplcache'
 " vim-distinguished
 NeoBundle 'Lokaltog/vim-distinguished'
-
+" vim-perl
+" NeoBundle 'vim-perl/vim-perl'
 
 
 

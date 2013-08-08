@@ -31,7 +31,11 @@ set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V
 
 
 " import from .mixivimrc
-source ~/.mixivimrc
+let OSTYPE = system('uname')
+
+if OSTYPE == "Linux\n"
+    source ~/.mixivimrc
+endif
 
 
 " KeyMaps

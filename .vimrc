@@ -1,9 +1,29 @@
 " .vimrc
 
 
+"
+"                                ___           ___           ___
+"      ___                      /\  \         /\  \         /\__\
+"     /\  \        ___         |::\  \       /::\  \       /:/  /
+"     \:\  \      /\__\        |:|:\  \     /:/\:\__\     /:/  /
+"      \:\  \    /:/__/      __|:|\:\  \   /:/ /:/  /    /:/  /  ___
+"  ___  \:\__\  /::\  \     /::::|_\:\__\ /:/_/:/__/___ /:/__/  /\__\
+" /\  \ |:|  |  \/\:\  \__  \:\~~\  \/__/ \:\/:::::/  / \:\  \ /:/  /
+" \:\  \|:|  |   ~~\:\/\__\  \:\  \        \::/~~/~~~~   \:\  /:/  /
+"  \:\__|:|__|      \::/  /   \:\  \        \:\~~\        \:\/:/  /
+"   \::::/__/       /:/  /     \:\__\        \:\__\        \::/  /
+"    ~~~~           \/__/       \/__/         \/__/         \/__/
+"
+" ======================================================================== "
+" ------------------------------------------------------------------------ "
+
+
 " 定番設定
 
 set t_Co=256
+syntax on
+" colorscheme wombat
+" colorscheme molokai
 colorscheme desert
 set background=dark
 set tabstop=4
@@ -20,6 +40,7 @@ set ruler " ルーラー(右下の行,列番号)を表示
 set smartcase " 大文字小文字の両方が含まれている場合は大文字小文字を区別
 set fileformats=unix,mac,dos " 改行コードの自動認識
 set nocompatible " vimの拡張機能をON
+set hlsearch " ハイライト検索を有効にする
 
 
 " ステータス行設定
@@ -27,8 +48,12 @@ set nocompatible " vimの拡張機能をON
 set showcmd  " コマンドをステータス行に表示
 set laststatus=2 " 常にステータス行を表示
 set cmdheight=2  " コマンドラインの高さ
-set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8p
+" set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8p
 
+" ステータスラインを編集
+" 左寄せ: ファイル名,変更有無
+" 右寄せ: ファイルタイプ,文字コード,改行コード,行数,列数
+set statusline=%F%m%=[%Y]\[%{&fileencoding}]\[%{&ff}]\[%l/%c]
 
 " import from .mixivimrc
 let OSTYPE = system('uname')
@@ -41,6 +66,15 @@ endif
 " KeyMaps
 map <c-a> ^
 map <c-e> $
+
+
+" 括弧とかダブルコート入力時に← に戻る
+imap {} {}<Left>
+imap [] []<Left>
+imap () ()<Left>
+imap "" ""<Left>
+imap '' ''<Left>
+imap <> <><Left>
 
 
 " for unite.vim
@@ -68,7 +102,6 @@ endif
 
 " 全角スペース、末尾の半角スペースの色付け設定
 if has("syntax")
-    syntax on
     function! ActivateInvisibleIndicator()
         syntax match InvisibleJISX0208Space "　" display containedin=ALL
         highlight InvisibleJISX0208Space term=underline ctermbg=Red guifg=#999999 gui=underline
@@ -136,6 +169,8 @@ NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Lokaltog/vim-distinguished'
 " vim-perl
 " NeoBundle 'vim-perl/vim-perl'
-
-
+" wombat
+NeoBundle 'jeffreyiacono/vim-colors-wombat'
+" molokai カラースキーム
+NeoBundle 'tomasr/molokai'
 

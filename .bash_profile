@@ -5,6 +5,13 @@ fi
 
 # User specific environment and startup programs
 
-PATH=$PATH:$HOME/.local/bin:$HOME/bin
+case $(uname -s) in
+    Linux)
+        PATH=$PATH:$HOME/.local/bin:$HOME/bin
+        ;;
+    Darwin)
+        PATH=$PATH:/usr/local/bin
+        ;;
+esac
 
 export PATH

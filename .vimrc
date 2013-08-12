@@ -39,6 +39,11 @@ map <c-a> ^
 map <c-e> $
 
 
+" ウィンドウの開く方向を指定する
+
+set splitright " 新しいウィンドウを右に開く
+
+
 " for unite.vim
 
 " 入力モードで開始

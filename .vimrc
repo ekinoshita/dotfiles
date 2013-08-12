@@ -81,7 +81,18 @@ imap '' ''<Left>
 imap <> <><Left>
 
 
-" for unite.vim
+let mapleader=" "
+
+" Leaderのショートカット
+nnoremap <SID>(toggle-paste)          :<C-u>set paste!<CR>
+nnoremap <SID>(toggle-number)         :<C-u>set number!<CR>
+nnoremap <SID>(toggle-relativenumber) :<C-u>set relativenumber!<CR>
+nmap <silent> <Leader>1 <SID>(toggle-number)
+nmap <silent> <Leader>2 <SID>(toggle-relativenumber)
+nmap <silent> <Leader>3 <SID>(toggle-paste)"
+
+
+"  for unite.vim
 
 " 入力モードで開始
 let g:unite_enable_start_insert=1

@@ -1,3 +1,5 @@
 .vim/bundle/*
 .vim/tmp/*
+*.netrwhist
+>>>>>>> 3d77b6bc0b9cac6fa9ca1fcd46b73a9eab4c4928
 !.vim/template/perl.tmpl

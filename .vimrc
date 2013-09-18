@@ -92,6 +92,13 @@ nmap <silent> <Leader>2 <SID>(toggle-relativenumber)
 nmap <silent> <Leader>3 <SID>(toggle-paste)"
 
 
+" vimdiffの色設定
+hi DiffAdd    ctermfg=black ctermbg=2
+hi DiffChange ctermfg=black ctermbg=3
+hi DiffDelete ctermfg=black ctermbg=6
+hi DiffText   ctermfg=black ctermbg=7
+
+
 "  for unite.vim
 
 " 入力モードで開始

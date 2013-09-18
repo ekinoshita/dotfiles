@@ -7,7 +7,7 @@ fi
 
 case $(uname -s) in
     Linux)
-        PATH=$PATH:$HOME/.local/bin:$HOME/bin
+        PATH=$PATH:$HOME/local/bin
         ;;
     Darwin)
         PATH=$PATH:/usr/local/bin

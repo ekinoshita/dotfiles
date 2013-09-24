@@ -1,19 +1,21 @@
 [user]
-	email = eisuke.kinoshita@mixi.co.jp
-	name = Eisuke Kinoshita
+    email = eisuke.kinoshita@mixi.co.jp
+    name = Eisuke Kinoshita
 [color]
-	ui = auto
+    ui = auto
 [core]
-	excludesfile = /home/bkapps/.gitignore_global
-	editor = vim
+    excludesfile = /home/bkapps/.gitignore_global
+    editor = vim
 [alias]
-	co = checkout
+    br = branch
     st = status
-	br = branch
+    co = checkout
     df = diff
-	graph = log --graph
-	list = config --list
-	edit = config -e
-	gedit = config --global -e
+    graph = log --graph
+    list = config --list
+    edit = config -e
+    hard = reset --hard HEAD
+    gedit = config --global -e
+    cp = cherry-pick
 [push]
-	default = current
+    default = current

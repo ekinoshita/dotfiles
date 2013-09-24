@@ -19,6 +19,10 @@ stty stop undef
 # For Mac
 case $(uname -s) in
     Darwin)
+        export LANG=ja_JP.UTF-8
+        export PATH=$PATH:/usr/local/bin:~/bin:
+        export HISTCONTROL=ignoreboth
+
         # ls colors
         export LSCOLORS=gxfxcxdxbxegedabagacad
         #export LSCOLORS=CxGxcxdxCxegedabagacad
@@ -31,6 +35,7 @@ esac
 
 
 # User specific aliases and functions
+alias ls='ls -Fh'
 alias ll='ls -la'
 alias rm='rm -i'
 alias mv='mv -i'

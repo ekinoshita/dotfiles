@@ -28,13 +28,13 @@ alias rm='rm -i'
 alias 256color='~/download/256color.pl'
 
 
-# import git-completion.bash & git-prompt.sh
-if [ -f ~/.git-completion.bash ]; then
-    source ~/.git-completion.bash
-fi
-
+# import git-prompt.sh & git-completion.bash
 if [ -f ~/.git-prompt.sh ]; then
     source ~/.git-prompt.sh
+fi
+
+if [ -f ~/.git-completion.bash ]; then
+    source ~/.git-completion.bash
 fi
 
 

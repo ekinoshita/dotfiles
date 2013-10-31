@@ -12,6 +12,10 @@ esac
 export TERM=xterm-256color
 
 
+# disable the terminal lock of Ctrl-S
+stty stop undef
+
+
 # For Mac
 case $(uname -s) in
     Darwin)
@@ -25,7 +29,11 @@ esac
 # User specific aliases and functions
 alias ll='ls -la'
 alias rm='rm -i'
+alias mv='mv -i'
 alias 256color='~/download/256color.pl'
+alias bashrc='vim ~/.bashrc'
+alias mixibashrc='vim ~/.mixibashrc'
+alias vimrc='vim ~/.vimrc'
 
 
 # import git-prompt.sh & git-completion.bash

@@ -1,7 +1,4 @@
 " .vimrc
-
-
-"
 "                                ___           ___           ___
 "      ___                      /\  \         /\  \         /\__\
 "     /\  \        ___         |::\  \       /::\  \       /:/  /
@@ -22,8 +19,8 @@
 
 set t_Co=256
 syntax on
-" colorscheme wombat
-" colorscheme molokai
+"colorscheme wombat
+"" colorscheme molokai
 colorscheme desert
 set background=dark
 set tabstop=4
@@ -32,7 +29,7 @@ set expandtab
 set autoindent
 set backspace=2 " バックスペースでインデントや改行を削除できるようにする
 set wrapscan " 検索時にファイルの最後まで行ったら最初に戻る
-set showmatch " 括弧入力時に対応する括弧を表示
+"set showmatch " Highlight-UnMatched-Brackets 入れたので不要になった
 set number
 set ruler " ルーラー(右下の行,列番号)を表示
 "set list " タブや改行を表示
@@ -81,6 +78,11 @@ imap '' ''<Left>
 imap <> <><Left>
 
 
+" テストを開く・実行する
+nmap ,ot :sp t/%<.t<CR>
+nmap ,t :! clear && MIXI_DEBUG=0 && mixi-prove %<CR>
+
+
 let mapleader=" "
 
 " Leaderのショートカット
@@ -112,13 +114,16 @@ noremap <C-Z> :Unite file_mru<CR>
 
 
 " for neocomplcache.vim
-
 let g:neocomplcache_enable_at_startup = 1
+
+
+" for Highlight-UnMatched-Brackets
+set matchpairs+=<:>
 
 
 " □とか○の文字があってもカーソル位置がずれないようにする
 if exists('&ambiwidth')
-set ambiwidth=double
+    set ambiwidth=double
 endif
 
 
@@ -165,16 +170,19 @@ autocmd BufNewFile *.t 0r $HOME/.vim/template/perl.tmpl
 " 拡張子.tのファイルをperlコードとして認識する
 au BufReadPost,BufNewFile *.t :setl filetype=perl
 
+" ----------------------------------------------------------
+" Plugins
 
-" Plugin
-filetype indent plugin on
+filetype off " NeoBundleを挟む
 
 " NeoBundle
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
-  call neobundle#rc(expand('~/.vim/bundle/'))
 endif
 
+call neobundle#rc(expand('~/.vim/bundle/'))
+
+filetype indent plugin on " NeoBundleを挟む
 
 " My Bundles here:
 " jellybeans
@@ -195,4 +203,13 @@ NeoBundle 'Lokaltog/vim-distinguished'
 NeoBundle 'jeffreyiacono/vim-colors-wombat'
 " molokai カラースキーム
 NeoBundle 'tomasr/molokai'
+" 対応する括弧をハイライト表示に
+NeoBundle 'vim-scripts/Highlight-UnMatched-Brackets'
+NeoBundle 'kana/vim-textobj-user'
+NeoBundle 'h1mesuke/textobj-wiw.git'
+" アロー演算子とかをいい感じにインデントする
+NeoBundle 'h1mesuke/vim-alignta.git'
+" yankしている文字列をtext-objの部分と入れ替える
+NeoBundle 'kana/vim-operator-user.git'
+NeoBundle 'kana/vim-operator-replace.git'
 

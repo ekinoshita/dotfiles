@@ -45,16 +45,16 @@ set hlsearch " ハイライト検索を有効にする
 set showcmd  " コマンドをステータス行に表示
 set laststatus=2 " 常にステータス行を表示
 set cmdheight=2  " コマンドラインの高さ
-" set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8p
 
 " ステータスラインを編集
 " 左寄せ: ファイル名,変更有無
 " 右寄せ: ファイルタイプ,文字コード,改行コード,行数,列数
+"set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8p
 set statusline=%F%m%=[%Y]\[%{&fileencoding}]\[%{&ff}]\[%l/%c]
+
 
 " import from .mixivimrc
 let OSTYPE = system('uname')
-
 if OSTYPE == "Linux\n"
     source ~/.mixivimrc
 endif
@@ -63,6 +63,14 @@ endif
 " KeyMaps
 map <c-a> ^
 map <c-e> $
+vnoremap ; :
+nnoremap ,v :vs ~/.vimrc<CR>
+nnoremap ,rv :source ~/.vimrc<CR>
+
+
+" テストを開く・実行する
+nmap ,ot :sp t/%<.t<CR>
+nmap ,t :! clear && MIXI_DEBUG=0 && mixi-prove %<CR>
 
 
 " ウィンドウの開く方向を指定する
@@ -76,11 +84,6 @@ imap () ()<Left>
 imap "" ""<Left>
 imap '' ''<Left>
 imap <> <><Left>
-
-
-" テストを開く・実行する
-nmap ,ot :sp t/%<.t<CR>
-nmap ,t :! clear && MIXI_DEBUG=0 && mixi-prove %<CR>
 
 
 let mapleader=" "
@@ -119,6 +122,16 @@ let g:neocomplcache_enable_at_startup = 1
 
 " for Highlight-UnMatched-Brackets
 set matchpairs+=<:>
+
+
+" smooth-scrollの初速を変更する
+" <C-d>/<C-u> 時のスリープ時間 (msec) : 小さくするとスクロールが早くなります。
+" Default : 10
+let g:ac_smooth_scroll_du_sleep_time_msec = 5
+
+" <C-f>/<C-b> 時のスリープ時間 (msec) : 小さくするとスクロールが早くなります。
+" Default : 10
+let g:ac_smooth_scroll_fb_sleep_time_msec = 5
 
 
 " □とか○の文字があってもカーソル位置がずれないようにする
@@ -212,4 +225,5 @@ NeoBundle 'h1mesuke/vim-alignta.git'
 " yankしている文字列をtext-objの部分と入れ替える
 NeoBundle 'kana/vim-operator-user.git'
 NeoBundle 'kana/vim-operator-replace.git'
-
+" VimのスクロールもSmoothScrollに！
+NeoBundle 'yonchu/accelerated-smooth-scroll'

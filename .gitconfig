@@ -11,11 +11,10 @@
     st = status
     co = checkout
     df = diff
-    graph = log --graph
-    list = config --list
-    edit = config -e
+	graph = log --graph
+	list = config --list
+	edit = config -e
+	gedit = config --global -e
     hard = reset --hard HEAD
-    gedit = config --global -e
-    cp = cherry-pick
 [push]
     default = current

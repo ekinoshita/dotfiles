@@ -1,0 +1,1 @@
+/home/bkapps/.vim/bundle/vim-colors-wombat/colors/wombat.vim

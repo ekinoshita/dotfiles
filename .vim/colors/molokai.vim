@@ -1,0 +1,1 @@
+/home/bkapps/.vim/bundle/molokai/colors/molokai.vim

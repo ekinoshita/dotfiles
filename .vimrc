@@ -18,11 +18,26 @@
 " 定番設定
 
 set t_Co=256
-syntax on
-"colorscheme wombat
-"" colorscheme molokai
-colorscheme desert
+" syntax on
+" solarized options 
+" let g:solarized_termcolors = 256
+" let g:solarized_visibility = "high"
+" let g:solarized_contrast = "high"
+" let g:solarized_termtrans = 1
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+let g:solarized_degrade=1
+let g:solarized_bold=1
+let g:solarized_underline=1
+let g:solarized_italic=1
+let g:solarized_contrast='normal'
+let g:solarized_visibility='normal'
+syntax enable
 set background=dark
+colorscheme solarized
+" colorscheme desert
+" colorscheme wombat
+" colorscheme molokai
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -61,30 +76,23 @@ endif
 
 
 " KeyMaps
-map <c-a> ^
-map <c-e> $
-vnoremap ; :
+noremap <c-a> ^
+noremap <c-e> $
+nnoremap ; :
 nnoremap ,v :vs ~/.vimrc<CR>
+nnoremap ,tv :tabe ~/.vimrc<CR>
 nnoremap ,rv :source ~/.vimrc<CR>
-
-
-" テストを開く・実行する
-nmap ,ot :sp t/%<.t<CR>
-nmap ,t :! clear && MIXI_DEBUG=0 && mixi-prove %<CR>
-
-
-" ウィンドウの開く方向を指定する
-set splitright " 新しいウィンドウを右に開く
-
+nnoremap <C-Tab> gt
+nnoremap <C-S-Tab> gT
+inoremap dumper warn Data::Dumper::Dumper
 
 " 括弧とかダブルコート入力時に← に戻る
-imap {} {}<Left>
-imap [] []<Left>
-imap () ()<Left>
-imap "" ""<Left>
-imap '' ''<Left>
-imap <> <><Left>
-
+inoremap {} {}<Left>
+inoremap [] []<Left>
+inoremap () ()<Left>
+inoremap "" ""<Left>
+inoremap '' ''<Left>
+inoremap <> <><Left>
 
 let mapleader=" "
 
@@ -95,6 +103,14 @@ nnoremap <SID>(toggle-relativenumber) :<C-u>set relativenumber!<CR>
 nmap <silent> <Leader>1 <SID>(toggle-number)
 nmap <silent> <Leader>2 <SID>(toggle-relativenumber)
 nmap <silent> <Leader>3 <SID>(toggle-paste)"
+
+" テストを開く・実行する
+nnoremap ,ot :sp t/%<.t<CR>
+nnoremap ,t :! clear && MIXI_DEBUG=0 && mixi-prove %<CR>
+
+
+" ウィンドウの開く方向を指定する
+set splitright " 新しいウィンドウを右に開く
 
 
 " vimdiffの色設定
@@ -198,32 +214,29 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 filetype indent plugin on " NeoBundleを挟む
 
 " My Bundles here:
-" jellybeans
-NeoBundle 'nanotech/jellybeans.vim.git'
-" solarized
-NeoBundle 'altercation/vim-colors-solarized.git'
-" jump2pm
-NeoBundle 'nakatakeshi/jump2pm.vim.git'
-" unite
 NeoBundle 'Shougo/unite.vim.git'
-" neocomplcache
 NeoBundle 'Shougo/neocomplcache'
-" vim-distinguished
-NeoBundle 'Lokaltog/vim-distinguished'
-" vim-perl
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'nakatakeshi/jump2pm.vim.git'
 " NeoBundle 'vim-perl/vim-perl'
-" wombat
-NeoBundle 'jeffreyiacono/vim-colors-wombat'
-" molokai カラースキーム
-NeoBundle 'tomasr/molokai'
+NeoBundle 'yonchu/accelerated-smooth-scroll'
+
 " 対応する括弧をハイライト表示に
 NeoBundle 'vim-scripts/Highlight-UnMatched-Brackets'
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'h1mesuke/textobj-wiw.git'
+
 " アロー演算子とかをいい感じにインデントする
 NeoBundle 'h1mesuke/vim-alignta.git'
+
 " yankしている文字列をtext-objの部分と入れ替える
 NeoBundle 'kana/vim-operator-user.git'
 NeoBundle 'kana/vim-operator-replace.git'
-" VimのスクロールもSmoothScrollに！
-NeoBundle 'yonchu/accelerated-smooth-scroll'
+
+" colorschemes
+NeoBundle 'nanotech/jellybeans.vim.git'
+NeoBundle 'altercation/vim-colors-solarized.git'
+NeoBundle 'Lokaltog/vim-distinguished'
+NeoBundle 'jeffreyiacono/vim-colors-wombat'
+NeoBundle 'tomasr/molokai'
+

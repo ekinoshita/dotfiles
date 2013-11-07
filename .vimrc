@@ -60,12 +60,12 @@ endif
 noremap <c-a> ^
 noremap <c-e> $
 nnoremap ; :
-nnoremap ,v :vs ~/.vimrc<CR>
+nnoremap ,vim :vs ~/.vimrc<CR>
 nnoremap ,tv :tabe ~/.vimrc<CR>
 nnoremap ,rv :source ~/.vimrc<CR>
-nnoremap <C-Tab> gt
-nnoremap <C-S-Tab> gT
-inoremap dumper warn Data::Dumper::Dumper
+nnoremap <Tab> gt
+nnoremap <S-Tab> gT
+
 
 " 括弧とかダブルコート入力時に← に戻る
 inoremap {} {}<Left>
@@ -84,10 +84,6 @@ nnoremap <SID>(toggle-relativenumber) :<C-u>set relativenumber!<CR>
 nmap <silent> <Leader>1 <SID>(toggle-number)
 nmap <silent> <Leader>2 <SID>(toggle-relativenumber)
 nmap <silent> <Leader>3 <SID>(toggle-paste)"
-
-" テストを開く・実行する
-nnoremap ,ot :sp t/%<.t<CR>
-nnoremap ,t :! clear && MIXI_DEBUG=0 && mixi-prove %<CR>
 
 
 " ウィンドウの開く方向を指定する

@@ -20,9 +20,13 @@ stty stop undef
 case $(uname -s) in
     Darwin)
         # ls colors
-        alias ls='ls -G' 
         export LSCOLORS=gxfxcxdxbxegedabagacad
         #export LSCOLORS=CxGxcxdxCxegedabagacad
+
+        # aliases
+        alias ls='ls -G' 
+        alias keyboardoff='sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
+        alias keyboardon='sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
 esac
 
 

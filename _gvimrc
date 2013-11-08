@@ -1,0 +1,68 @@
+"colorscheme desert
+colorscheme molokai
+gui
+"set transparency=230 " 背景透過
+set visualbell t_vb= " gvimでビープ音を消す(同時に画面フラッシュも無効にする)
+"set guifont=Migu_1M:h12:cSHIFTJIS
+set guifont=Osaka-Mono:h16
+set tabstop=4 " タブ文字が占める幅を調整
+set expandtab " タブ入力を空白入力に切り替え(既存タブには影響なし)
+set autoindent " 開業時に前行のインデントを継続する
+set smartindent " 改行時に入力された行の末尾に合わせて次の行のインデントを調整
+set shiftwidth=4 " 自動インデントでずれる幅を調整
+set guioptions=m " メニューバーを表示
+set guioptions-=T " ツールバーを非表示
+set guioptions+=a " ビジュアルモードで選択したテキストをクリップボードに乗せる
+set clipboard=unnamed,autoselect " ヤンクとクリップボードを共有する
+
+"set nocursorline " カーソル行を強調表示しない
+" 挿入モード時のみカーソル行をハイライトにする
+autocmd InsertEnter,InsertLeave * set cursorline! 
+
+" ステータスラインの設定
+set statusline=%f%{'['.(&fenc!=''?&fenc:&enc).'-'.&ff.']'}\ \0\x%B%=%l,%c%V%8P
+
+" _gvimrcを瞬時で開く
+"nnoremap <esc>.vim :tabe $VIM/_gvimrc<CR>
+nnoremap <esc>.vim :tabe ~/_gvimrc<CR>
+
+" _gvimrcの設定を瞬時に反映
+"nnoremap <esc><c-r> :<C-u>source $VIM/_gvimrc<CR>
+nnoremap <esc><c-r> :<C-u>source ~/_gvimrc<CR>
+
+" スワップファイルの出力先を変更
+"set directory=$VIM/swp
+set directory=~/.vim/swp
+
+" バックアップファイルの出力先を変更
+"set backupdir=$VIM/backup
+set backupdir=~/.vim/backup
+
+" viminfoファイルの出力先を変更
+"set viminfo+=n$VIM/viminfo.txt
+set viminfo+=n~/.vim/viminfo.txt
+
+nnoremap <C-Tab> gt
+nnoremap <S-C-Tab> gT
+nnoremap <C-a> ^
+nnoremap <C-e> $
+
+" ウィンドウサイズと位置を保存・復元
+"let g:save_window_file = expand('$VIM/.vimwinpos')
+let g:save_window_file = expand('~/.vim/.vimwinpos')
+augroup SaveWindow
+  autocmd!
+  autocmd VimLeavePre * call s:save_window()
+  function! s:save_window()
+    let options = [
+      \ 'set columns=' . &columns,
+      \ 'set lines=' . &lines,
+      \ 'winpos ' . getwinposx() . ' ' . getwinposy(),
+      \ ]
+    call writefile(options, g:save_window_file)
+  endfunction
+augroup END
+
+if filereadable(g:save_window_file)
+  execute 'source' g:save_window_file
+endif

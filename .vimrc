@@ -169,8 +169,8 @@ source $HOME/.vim/plugin/recognize_charcode.vim
 
 
 " 新規作成時にテンプレートを呼び出し
-autocmd BufNewFile *.pl 0r $HOME/.vim/template/perl.tmpl
-autocmd BufNewFile *.t 0r $HOME/.vim/template/perl.tmpl
+autocmd BufNewFile *.pl 0r $HOME/.vim/template/perl_tmpl.pl
+autocmd BufNewFile *.t 0r $HOME/.vim/template/perl_tmpl.t
 
 
 " 拡張子.tのファイルをperlコードとして認識する

@@ -1,4 +1,3 @@
-" .vimrc
 "                                ___           ___           ___
 "      ___                      /\  \         /\  \         /\__\
 "     /\  \        ___         |::\  \       /::\  \       /:/  /
@@ -11,33 +10,15 @@
 "   \::::/__/       /:/  /     \:\__\        \:\__\        \::/  /
 "    ~~~~           \/__/       \/__/         \/__/         \/__/
 "
-" ======================================================================== "
-" ------------------------------------------------------------------------ "
-
+"
+" Powered by FIGlet ( $ figlet -f isometric2 vimrc )
+"
+" ========================================================================
 
 " 定番設定
 
 set t_Co=256
 " syntax on
-" solarized options 
-" let g:solarized_termcolors = 256
-" let g:solarized_visibility = "high"
-" let g:solarized_contrast = "high"
-" let g:solarized_termtrans = 1
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
-let g:solarized_degrade=1
-let g:solarized_bold=1
-let g:solarized_underline=1
-let g:solarized_italic=1
-let g:solarized_contrast='normal'
-let g:solarized_visibility='normal'
-syntax enable
-set background=dark
-colorscheme solarized
-" colorscheme desert
-" colorscheme wombat
-" colorscheme molokai
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -240,3 +221,21 @@ NeoBundle 'Lokaltog/vim-distinguished'
 NeoBundle 'jeffreyiacono/vim-colors-wombat'
 NeoBundle 'tomasr/molokai'
 
+" NeoBundleで入れたcolorchemeの設定はNeoBundle以下に書く
+" solarized options 
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+let g:solarized_degrade=1
+let g:solarized_bold=1
+let g:solarized_underline=1
+let g:solarized_italic=1
+" let g:solarized_contrast = "high"
+let g:solarized_contrast='normal'
+" let g:solarized_visibility = "high"
+let g:solarized_visibility='normal'
+syntax enable
+set background=dark
+colorscheme solarized
+" colorscheme desert
+" colorscheme wombat
+" colorscheme molokai

@@ -1,12 +1,18 @@
-# .bashrc
-
-
-# import from .mixibashrc
-case $(uname -s) in
-    Linux)
-        . ~/.mixibashrc
-esac
-
+#                     ___           ___           ___           ___            ___
+#      _____         /\  \         /\__\         /\  \         /\  \          /\__\
+#     /::\  \       /::\  \       /:/ _/_        \:\  \       /::\  \        /:/  /
+#    /:/\:\  \     /:/\:\  \     /:/ /\  \        \:\  \     /:/\:\__\      /:/  /
+#   /:/ /::\__\   /:/ /::\  \   /:/ /::\  \   ___ /::\  \   /:/ /:/  /     /:/  /  ___
+#  /:/_/:/\:|__| /:/_/:/\:\__\ /:/_/:/\:\__\ /\  /:/\:\__\ /:/_/:/__/___  /:/__/  /\__\
+#  \:\/:/ /:/  / \:\/:/  \/__/ \:\/:/ /:/  / \:\/:/  \/__/ \:\/:::::/  /  \:\  \ /:/  /
+#   \::/_/:/  /   \::/__/       \::/ /:/  /   \::/__/       \::/~~/~~~~    \:\  /:/  /
+#    \:\/:/  /     \:\  \        \/_/:/  /     \:\  \        \:\~~\         \:\/:/  /
+#     \::/  /       \:\__\         /:/  /       \:\__\        \:\__\         \::/  /
+#      \/__/         \/__/         \/__/         \/__/         \/__/          \/__/
+#
+#
+# Powered by FIGlet ( $ figlet -f isometric2 bashrc )
+#========================================================================================
 
 # 256 colors
 export TERM=xterm-256color
@@ -17,32 +23,50 @@ stty stop undef
 
 
 # For Mac
-case $(uname -s) in
+if [ `uname -s` = 'Darwin' ]; then
+    export LANG=ja_JP.UTF-8
+    export PATH=$PATH:/usr/local/bin:~/bin:
+
+    # keyboard on/off
+    alias keyboardoff='sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
+    alias keyboardon='sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
+
+fi
+
+
+# to make duplicative command history to one time
+export HISTCONTROL=ignoreboth
+
+
+# ls colors
+case `uname -s` in
     Darwin)
-        export LANG=ja_JP.UTF-8
-        export PATH=$PATH:/usr/local/bin:~/bin:
-        export HISTCONTROL=ignoreboth
-
-        # ls colors
-        export LSCOLORS=gxfxcxdxbxegedabagacad
+        alias ls="ls -G"
+        alias ll="ls -laG"
         #export LSCOLORS=CxGxcxdxCxegedabagacad
-
-        # aliases
-        alias ls='ls -G' 
-        alias keyboardoff='sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
-        alias keyboardon='sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
+        export LSCOLORS=gxfxcxdxbxegedabagacad
+        ;;
+    Linux)
+        alias ls='ls --color'
+        alias ll='ls -la --color'
+        ;;
 esac
 
 
 # User specific aliases and functions
-alias ls='ls -Fh'
-alias ll='ls -la'
+#alias ls='ls -Fh'
 alias rm='rm -i'
 alias mv='mv -i'
 alias 256color='~/download/256color.pl'
 alias bashrc='vim ~/.bashrc'
-alias mixibashrc='vim ~/.mixibashrc'
 alias vimrc='vim ~/.vimrc'
+
+
+# import from .mixibashrc
+if [ `uname -s` = 'Linux' ]; then
+    . ~/.mixibashrc
+    alias mixibashrc='vim ~/.mixibashrc'
+fi
 
 
 # import git-prompt.sh & git-completion.bash
@@ -63,12 +87,15 @@ else
     export PS1='\[\033[01;32m\]\u@\h\[\033[01;33m\] \w$(__git_ps1 " (%s)") \n\[\033[01;34m\]\$\[\033[00m\] '
 fi
 
+
 # Omit the ssh passphrase input for the git push
-if [ -f ~/.ssh-agent ]; then
-    . ~/.ssh-agent
+if [ `uname -s` = 'Darwin' ]; then
+    if [ -f ~/.ssh-agent ]; then
+        . ~/.ssh-agent
+    fi
+    if [ -z "$SSH_AGENT_PID" ] || ! kill -0 $SSH_AGENT_PID; then
+        ssh-agent > ~/.ssh-agent
+        . ~/.ssh-agent
+    fi
+    ssh-add -l >& /dev/null || ssh-add
 fi
-if [ -z "$SSH_AGENT_PID" ] || ! kill -0 $SSH_AGENT_PID; then
-    ssh-agent > ~/.ssh-agent
-    . ~/.ssh-agent
-fi
-ssh-add -l >& /dev/null || ssh-add

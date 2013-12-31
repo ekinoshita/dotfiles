@@ -19,7 +19,9 @@ export TERM=xterm-256color
 
 
 # disable the terminal lock of Ctrl-S
-stty stop undef
+#if [ "$SSH_TTY" != "" ]; then
+#    stty stop undef
+#fi
 
 
 # For Mac

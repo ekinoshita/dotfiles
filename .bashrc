@@ -91,7 +91,7 @@ fi
 
 
 # Omit the ssh passphrase input for the git push
-if [ `uname -s` = 'Darwin' ]; then
+if [ `uname -s` = 'Linux' ]; then
     if [ -f ~/.ssh-agent ]; then
         . ~/.ssh-agent
     fi

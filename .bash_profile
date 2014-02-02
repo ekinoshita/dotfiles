@@ -10,8 +10,9 @@ case $(uname -s) in
         PATH=$PATH:$HOME/local/bin
         ;;
     Darwin)
-        #PATH=$PATH:/usr/local/bin
         # default path = /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+        PATH=/usr/local/bin:$PATH
+        source ~/perl5/perlbrew/etc/bashrc
         ;;
 esac
 

@@ -34,6 +34,7 @@ set smartcase " 大文字小文字の両方が含まれている場合は大文�
 set fileformats=unix,mac,dos " 改行コードの自動認識
 set nocompatible " vimの拡張機能をON
 set hlsearch " ハイライト検索を有効にする
+set visualbell " ビープ音の代わりに画面フラッシュさせる
 
 
 " ステータス行設定

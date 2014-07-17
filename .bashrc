@@ -62,6 +62,7 @@ alias mv='mv -i'
 alias 256color='~/download/256color.pl'
 alias bashrc='vim ~/.bashrc'
 alias vimrc='vim ~/.vimrc'
+alias dotfiles='cd ~/git/dotfiles;tig'
 
 
 # import from .mixibashrc

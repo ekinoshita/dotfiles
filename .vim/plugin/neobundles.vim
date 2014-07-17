@@ -37,3 +37,5 @@ NeoBundle 'git@github.lo.mixi.jp:vim/vim-load_test', {
             \ }
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tomtom/tcomment_vim'
+
+source $HOME/.vim/plugin/colorscheme.vim

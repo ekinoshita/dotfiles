@@ -1,6 +1,11 @@
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'tomasr/molokai'
+NeoBundle 'sickill/vim-monokai'
+NeoBundle 'jonathanfilip/vim-lucius'
+NeoBundle 'morhetz/gruvbox'
+NeoBundle 'sjl/badwolf'
+NeoBundle 'jnurmine/Zenburn'
 
 " solarized settings
 " ------------------------------
@@ -9,7 +14,7 @@ let g:solarized_termcolors=256
 
 syntax on
 set background=dark
-colorscheme jellybeans
+colorscheme lucius
 
 " vimdiffの色設定
 hi DiffAdd    ctermfg=black ctermbg=2

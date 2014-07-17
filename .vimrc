@@ -40,11 +40,12 @@ nnoremap <c-e> $
 nnoremap tt :vne<CR>
 nnoremap ,v :tabe ~/.vimrc<CR>
 nnoremap ,r :source ~/.vimrc<CR>:NeoBundleInstall<CR>
-nnoremap <C-l> :nohlsearch<CR>
+nnoremap <C-L> :nohlsearch<CR>
 nnoremap ,n :MyTabMoveRight<CR>
 nnoremap ,N :MyTabMoveLeft<CR>
 nnoremap ,q :QuickRun<CR>
-nnoremap ,tree :NERDTree<CR>
+nnoremap gf :vertical wincmd f<CR>
+nnoremap <S-S> :NERDTree<CR>
 
 inoremap <> <><Left>
 inoremap {} {}<Left>
@@ -59,11 +60,11 @@ command! -nargs=1 -complete=file Rename f <args>|call delete(expand('#'))
 " Plugins
 source $HOME/.vim/plugin/recognize_charcode.vim
 source $HOME/.vim/plugin/neobundles.vim
-source $HOME/.vim/plugin/colorscheme.vim
 source $HOME/.vim/plugin/unite_config.vim
 source $HOME/.vim/plugin/jump2pm.vim
 source $HOME/.vim/plugin/mytabmove.vim
 source $HOME/.vim/plugin/smooth_scroll_config.vim
+source $HOME/.vim/plugin/change_statusbar_color.vim
 
 " for neocomplcache.vim
 let g:neocomplcache_enable_at_startup = 1

@@ -14,7 +14,7 @@ let g:solarized_termcolors=256
 
 syntax on
 set background=dark
-colorscheme lucius
+colorscheme badwolf
 
 " vimdiffの色設定
 hi DiffAdd    ctermfg=black ctermbg=2

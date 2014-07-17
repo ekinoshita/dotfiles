@@ -14,7 +14,12 @@ let g:solarized_termcolors=256
 
 syntax on
 set background=dark
-colorscheme badwolf
+
+if has("unix")
+    colorscheme badwolf
+elseif has("mac")
+    colorscheme solarized
+endif
 
 " vimdiffの色設定
 hi DiffAdd    ctermfg=black ctermbg=2

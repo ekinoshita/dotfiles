@@ -74,7 +74,6 @@ let g:neocomplcache_enable_at_startup = 1
 let g:unite_source_grep_max_candidates = 200
 
 " import from .mixivimrc
-let OSTYPE = system('uname')
-if OSTYPE == "Linux\n"
+if has("unix")
     source $HOME/.mixivimrc
 endif

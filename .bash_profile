@@ -11,8 +11,8 @@ case $(uname -s) in
         ;;
     Darwin)
         # default path = /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
-        PATH=/usr/local/bin:$PATH
-        source ~/perl5/perlbrew/etc/bashrc
+        PATH=$HOME/.nodebrew/current/bin:$PATH
+        PATH=$PATH:/usr/local/bin
         ;;
 esac
 

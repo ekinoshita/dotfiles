@@ -6,6 +6,7 @@
 [core]
     excludesfile = /home/bkapps/.gitignore_global
     editor = vim
+	excludesfile = /Users/eisuke.kinoshita/.gitignore
 [alias]
     br = branch
     st = status
@@ -18,3 +19,5 @@
     hard = reset --hard HEAD
 [push]
     default = current
+[hub]
+	host = github.lo.mixi.jp

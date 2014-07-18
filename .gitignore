@@ -1,5 +1,8 @@
+*.netrwhist
+*.DS_Store
 .vim/bundle/*
 .vim/tmp/*
-*.netrwhist
->>>>>>> 3d77b6bc0b9cac6fa9ca1fcd46b73a9eab4c4928
+.vim/swp/*
+.vim/backup/*
+.vim/viminfo.txt
 !.vim/template/perl.tmpl

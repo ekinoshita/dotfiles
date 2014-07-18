@@ -20,7 +20,7 @@ set t_Co=256
 set background=dark
 
 if has("mac")
-    colorscheme lucius
+    colorscheme solarized
 elseif has("unix")
     colorscheme wombat256mod
 endif

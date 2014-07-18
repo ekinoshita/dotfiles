@@ -74,6 +74,8 @@ let g:neocomplcache_enable_at_startup = 1
 let g:unite_source_grep_max_candidates = 200
 
 " import from .mixivimrc
-if has("unix")
+if has("mac")
+    " mac settings
+elsif has("unix")
     source $HOME/.mixivimrc
 endif

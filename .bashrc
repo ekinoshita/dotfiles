@@ -92,7 +92,7 @@ fi
 
 
 # Omit the ssh passphrase input for the git push
-if [ `uname -s` = 'Linux' ]; then
+if [ `uname -s` = 'Darwin' ]; then
     if [ -f ~/.ssh-agent ]; then
         . ~/.ssh-agent
     fi
@@ -101,4 +101,10 @@ if [ `uname -s` = 'Linux' ]; then
         . ~/.ssh-agent
     fi
     ssh-add -l >& /dev/null || ssh-add
+fi
+
+# anyenv
+if [ -d $HOME/.anyenv ] ; then
+    export PATH="$HOME/.anyenv/bin:$PATH"
+    eval "$(anyenv init -)"
 fi

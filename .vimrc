@@ -30,7 +30,9 @@ set statusline=%F%m%=[%Y]\[%{&fileencoding}]\[%{&ff}]\[%l/%c]
 set fileformats=unix,mac,dos
 set mouse=a
 set ttymouse=xterm2
-set clipboard+=unnamed
+set clipboard+=unnamed,autoselect
+set noerrorbells
+set vb t_vb=
 
 nnoremap ; :
 nnoremap <Tab> gt
@@ -72,6 +74,11 @@ let g:neocomplcache_enable_at_startup = 1
 
 " for neomru.vim
 let g:unite_source_grep_max_candidates = 200
+
+" for sysntastic
+let g:syntastic_enable_signs = 1
+let g:syntastic_auto_loc_list = 2
+let g:syntastic_enable_perl_checker = 1
 
 " import from .mixivimrc
 if has("mac")

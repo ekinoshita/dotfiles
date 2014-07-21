@@ -32,11 +32,12 @@ NeoBundle 'nakatakeshi/jump2pm.vim'
 NeoBundle 'yonchu/accelerated-smooth-scroll'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'tpope/vim-surround'
-NeoBundle 'git@github.lo.mixi.jp:vim/vim-load_test', {
-            \ 'depends': ['git@github.lo.mixi.jp:vim/vim-find_branch_root'],
-            \ }
+" NeoBundle 'git@github.lo.mixi.jp:vim/vim-load_test', {
+"             \ 'depends': ['git@github.lo.mixi.jp:vim/vim-find_branch_root'],
+"             \ }
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tomtom/tcomment_vim'
+NeoBundle 'scrooloose/syntastic.git'
 
 " css/javascript/html5
 

@@ -15,10 +15,10 @@ let g:solarized_termcolors=256
 syntax on
 set background=dark
 
-if has("unix")
+if has("mac")
+    colorscheme lucius
+elseif has("unix")
     colorscheme badwolf
-elseif has("mac")
-    colorscheme solarized
 endif
 
 " vimdiffの色設定

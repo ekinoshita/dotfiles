@@ -15,7 +15,7 @@
 #========================================================================================
 
 # 256 colors
-export TERM=xterm-256color
+#export TERM=xterm-256color
 
 
 # disable the terminal lock of Ctrl-S

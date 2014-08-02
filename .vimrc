@@ -20,10 +20,12 @@ set shiftwidth=4
 set expandtab
 set autoindent
 set splitright " 新しいウィンドウを右に開く
+set incsearch
 set wrapscan " 検索時にファイルの最後まで行ったら最初に戻る
 set smartcase " 大文字小文字の両方が含まれている場合は大文字小文字を区別
 set number
-set showcmd  
+set cursorline
+set showcmd 
 set laststatus=2
 set cmdheight=2
 set statusline=%F%m%=[%Y]\[%{&fileencoding}]\[%{&ff}]\[%l/%c]
@@ -32,7 +34,8 @@ set mouse=a
 set ttymouse=xterm2
 set clipboard+=unnamed,autoselect
 set noerrorbells
-set vb t_vb=
+set visualbell t_vb=
+set t_Co=256
 
 nnoremap ; :
 nnoremap <Tab> gt
@@ -68,6 +71,7 @@ source $HOME/.vim/plugin/mytabmove.vim
 source $HOME/.vim/plugin/smooth_scroll_config.vim
 source $HOME/.vim/plugin/change_statusbar_color.vim
 source $HOME/.vim/plugin/html5tags.vim
+source $HOME/.vim/plugin/syntastic_setting.vim
 
 " for neocomplcache.vim
 let g:neocomplcache_enable_at_startup = 1
@@ -75,14 +79,8 @@ let g:neocomplcache_enable_at_startup = 1
 " for neomru.vim
 let g:unite_source_grep_max_candidates = 200
 
-" for sysntastic
-let g:syntastic_enable_signs = 1
-let g:syntastic_auto_loc_list = 2
-let g:syntastic_enable_perl_checker = 1
-
 " import from .mixivimrc
-if has("mac")
-    " mac settings
-elsif has("unix")
+if filereadable($HOME.'/.mixivimrc')
     source $HOME/.mixivimrc
 endif
+

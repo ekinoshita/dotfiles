@@ -14,4 +14,4 @@ endif
 
 " unite-grep
 " 選択した文字列をunite-grep
-vnoremap /g y:Unite grep::-iHRn:<C-R>=escape(@", '\\.*$^[]')<CR><CR>
+vnoremap /g :Unite grep::-iHRn:<C-R>=escape(@", '\\.*$^[]')<CR><CR>

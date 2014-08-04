@@ -36,6 +36,9 @@ set clipboard+=unnamed,autoselect
 set noerrorbells
 set visualbell t_vb=
 set t_Co=256
+if exists('&ambiwidth')
+  set ambiwidth=double " ●■→などで表示が崩れないようにする
+endif
 
 nnoremap ; :
 nnoremap <Tab> gt
@@ -45,7 +48,7 @@ nnoremap <c-e> $
 nnoremap tt :vne<CR>
 nnoremap ,v :tabe ~/.vimrc<CR>
 nnoremap ,r :source ~/.vimrc<CR>:NeoBundleInstall<CR>
-nnoremap <C-L> :nohlsearch<CR>
+nnoremap <ESC><ESC> :nohlsearch<CR>
 nnoremap ,n :MyTabMoveRight<CR>
 nnoremap ,N :MyTabMoveLeft<CR>
 nnoremap ,q :QuickRun<CR>

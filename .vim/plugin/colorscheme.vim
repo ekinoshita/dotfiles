@@ -7,6 +7,8 @@ NeoBundle 'morhetz/gruvbox'
 NeoBundle 'sjl/badwolf'
 NeoBundle 'jnurmine/Zenburn'
 NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'dsolstad/vim-wombat256i'
+NeoBundle 'flazz/vim-colorschemes'
 
 " solarized settings
 " ------------------------------
@@ -14,12 +16,13 @@ let g:solarized_termcolors=256
 " ------------------------------
 
 syntax on
+set t_Co=256
 set background=dark
 
 if has("mac")
     colorscheme lucius
 elseif has("unix")
-    colorscheme badwolf
+    colorscheme wombat256mod
 endif
 
 " vimdiffの色設定

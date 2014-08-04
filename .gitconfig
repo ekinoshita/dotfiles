@@ -17,6 +17,8 @@
 	edit = config -e
 	gedit = config --global -e
     hard = reset --hard HEAD
+    cp = cherry-pick
+	pr = pull-request
 [push]
     default = current
 [hub]

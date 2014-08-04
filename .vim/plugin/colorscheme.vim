@@ -6,6 +6,7 @@ NeoBundle 'jonathanfilip/vim-lucius'
 NeoBundle 'morhetz/gruvbox'
 NeoBundle 'sjl/badwolf'
 NeoBundle 'jnurmine/Zenburn'
+NeoBundle 'w0ng/vim-hybrid'
 
 " solarized settings
 " ------------------------------

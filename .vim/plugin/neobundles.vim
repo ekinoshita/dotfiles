@@ -20,6 +20,7 @@ endif
 " My Bundles here:
 
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle "Shougo/vimproc.vim",

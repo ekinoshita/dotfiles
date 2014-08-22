@@ -106,5 +106,6 @@ fi
 # anyenv
 if [ -d $HOME/.anyenv ] ; then
     export PATH="$HOME/.anyenv/bin:$PATH"
+    export PATH="$HOME/.anyenv/envs/rbenv/versions/2.1.1/bin:$PATH"
     eval "$(anyenv init -)"
 fi

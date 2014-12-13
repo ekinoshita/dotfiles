@@ -4,9 +4,8 @@
 [color]
     ui = auto
 [core]
-    excludesfile = /home/bkapps/.gitignore_global
+    excludesfile = /home/eisuke.kinoshita/.gitignore_global
     editor = vim
-	excludesfile = /Users/eisuke.kinoshita/.gitignore
 [alias]
     br = branch
     st = status

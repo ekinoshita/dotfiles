@@ -11,7 +11,7 @@
 "    ~~~~           \/__/       \/__/         \/__/         \/__/
 "
 "
-" Powered by FIGlet ( $ figlet -f isometric2 vimrc )
+" Drawed by FIGlet ( $ figlet -f isometric2 vimrc )
 "
 " ========================================================================
 
@@ -26,7 +26,7 @@ set smartcase " 大文字小文字の両方が含まれている場合は大文�
 set number
 set cursorline
 set showcmd 
-set laststatus=2
+" set laststatus=2
 set cmdheight=2
 set statusline=%F%m%=[%Y]\[%{&fileencoding}]\[%{&ff}]\[%l/%c]
 set fileformats=unix,mac,dos

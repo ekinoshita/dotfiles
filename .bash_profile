@@ -17,3 +17,6 @@ case $(uname -s) in
 esac
 
 export PATH
+
+export HUB_TEST_HOST=github.lo.mixi.jp:80
+

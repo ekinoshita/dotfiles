@@ -27,6 +27,9 @@
 # For Mac
 if [ `uname -s` = 'Darwin' ]; then
     export LANG=ja_JP.UTF-8
+    export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home
+    export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.7.1.0
+    export PATH=$PATH:$EC2_HOME/bin
     export PATH=$PATH:/usr/local/bin:~/bin:
 
     # keyboard on/off

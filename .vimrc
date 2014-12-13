@@ -26,9 +26,7 @@ set smartcase " 大文字小文字の両方が含まれている場合は大文�
 set number
 set cursorline
 set showcmd 
-" set laststatus=2
 set cmdheight=2
-set statusline=%F%m%=[%Y]\[%{&fileencoding}]\[%{&ff}]\[%l/%c]
 set fileformats=unix,mac,dos
 set mouse=a
 set ttymouse=xterm2
@@ -39,12 +37,18 @@ set t_Co=256
 if exists('&ambiwidth')
   set ambiwidth=double " ●■→などで表示が崩れないようにする
 endif
+set diffopt=filler,iwhite " vimdiffしたときに空白文字を無視する
+
+" status line setting
+set laststatus=2
+set noshowmode
+
+noremap <c-a> ^
+noremap <c-e> $
 
 nnoremap ; :
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
-nnoremap <c-a> ^
-nnoremap <c-e> $
 nnoremap tt :vne<CR>
 nnoremap ,v :tabe ~/.vimrc<CR>
 nnoremap ,r :source ~/.vimrc<CR>:NeoBundleInstall<CR>
@@ -65,6 +69,9 @@ inoremap '' ''<Left>
 " ファイル保存先を指定し、古いファイルを削除する(Rename)
 command! -nargs=1 -complete=file Rename f <args>|call delete(expand('#'))
 
+" yamlファイルを開くときにsyntax off
+autocmd FileType yaml set ft=nosyntax
+
 " Plugins
 source $HOME/.vim/plugin/recognize_charcode.vim
 source $HOME/.vim/plugin/neobundles.vim
@@ -74,7 +81,8 @@ source $HOME/.vim/plugin/mytabmove.vim
 source $HOME/.vim/plugin/smooth_scroll_config.vim
 source $HOME/.vim/plugin/change_statusbar_color.vim
 source $HOME/.vim/plugin/html5tags.vim
-source $HOME/.vim/plugin/syntastic_setting.vim
+" source $HOME/.vim/plugin/syntastic_setting.vim
+source $HOME/.vim/plugin/perltidy_settings.vim
 
 " for neocomplcache.vim
 let g:neocomplcache_enable_at_startup = 1

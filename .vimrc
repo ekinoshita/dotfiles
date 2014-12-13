@@ -69,6 +69,11 @@ inoremap '' ''<Left>
 " ファイル保存先を指定し、古いファイルを削除する(Rename)
 command! -nargs=1 -complete=file Rename f <args>|call delete(expand('#'))
 
+" スワップファイル,バックアップファイル,viminfoの出力先を変更
+set directory=/tmp
+set backupdir=/tmp
+" set viminfo+=/tmp
+
 " yamlファイルを開くときにsyntax off
 autocmd FileType yaml set ft=nosyntax
 
@@ -94,4 +99,3 @@ let g:unite_source_grep_max_candidates = 200
 if filereadable($HOME.'/.mixivimrc')
     source $HOME/.mixivimrc
 endif
-

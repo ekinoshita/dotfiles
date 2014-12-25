@@ -47,6 +47,10 @@ NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'jelera/vim-javascript-syntax'
 NeoBundle 'othree/html5.vim'
 
+" markdown
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'plasticboy/vim-markdown'
+
 " colorschemes here:
 
 source $HOME/.vim/plugin/colorscheme.vim

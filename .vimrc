@@ -99,3 +99,11 @@ let g:unite_source_grep_max_candidates = 200
 if filereadable($HOME.'/.mixivimrc')
     source $HOME/.mixivimrc
 endif
+
+if has('gui_macvim')
+    set background=dark
+    set columns=81
+    set lines=40
+    set guifont=Monaco:h13
+    set guifontwide=ヒラギノ丸ゴ\ ProN\ W4:h13
+endif

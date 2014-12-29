@@ -3,7 +3,7 @@
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
 
-let syntastic_debug = 1 " debugモードを起動
+let syntastic_debug = 0 " debugモードを起動
 let g:syntastic_enable_signs = 1
 " let g:syntastic_enable_balloons = 1
 " let g:syntastic_auto_jump = 1 " ファイルを開く|保存したときに最初のエラーにカーソルを飛ばず

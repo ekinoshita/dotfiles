@@ -13,6 +13,7 @@ case $(uname -s) in
         # default path = /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
         PATH=$HOME/.nodebrew/current/bin:$PATH
         PATH=$PATH:/usr/local/bin
+        PATH=$PATH:`find /Applications/Xcode.app -name swift | grep bin | xargs -I{} dirname {}`
         ;;
 esac
 

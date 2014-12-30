@@ -39,6 +39,7 @@ NeoBundle 'scrooloose/syntastic.git'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'toyamarinyon/vim-swift'
 
 " css/javascript/html5
 

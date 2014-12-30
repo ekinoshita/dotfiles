@@ -88,6 +88,7 @@ source $HOME/.vim/plugin/change_statusbar_color.vim
 source $HOME/.vim/plugin/html5tags.vim
 source $HOME/.vim/plugin/syntastic_setting.vim
 source $HOME/.vim/plugin/perltidy_settings.vim
+source $HOME/.vim/plugin/autocmd_settings.vim
 
 " for neocomplcache.vim
 let g:neocomplcache_enable_at_startup = 1

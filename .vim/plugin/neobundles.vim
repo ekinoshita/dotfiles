@@ -40,6 +40,8 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'toyamarinyon/vim-swift'
+NeoBundle 'wookiehangover/jshint.vim'
+NeoBundle 'stephpy/vim-yaml'
 
 " css/javascript/html5
 

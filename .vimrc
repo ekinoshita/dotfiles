@@ -75,7 +75,7 @@ set backupdir=/tmp
 " set viminfo+=/tmp
 
 " yamlファイルを開くときにsyntax off
-autocmd FileType yaml set ft=nosyntax
+" autocmd FileType yaml set ft=nosyntax
 
 " Plugins
 source $HOME/.vim/plugin/recognize_charcode.vim

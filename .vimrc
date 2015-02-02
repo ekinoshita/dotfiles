@@ -72,7 +72,7 @@ command! -nargs=1 -complete=file Rename f <args>|call delete(expand('#'))
 " スワップファイル,バックアップファイル,viminfoの出力先を変更
 set directory=/tmp
 set backupdir=/tmp
-" set viminfo+=/tmp
+set viminfo+=/tmp
 
 " yamlファイルを開くときにsyntax off
 " autocmd FileType yaml set ft=nosyntax

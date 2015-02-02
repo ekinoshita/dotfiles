@@ -22,7 +22,7 @@ set background=dark
 if has("mac")
     colorscheme solarized
 elseif has("unix")
-    colorscheme wombat256mod
+    colorscheme hybrid
 endif
 
 " vimdiffの色設定

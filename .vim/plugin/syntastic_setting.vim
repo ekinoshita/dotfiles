@@ -20,7 +20,7 @@ let g:syntastic_mode_map = { 'mode' : 'active',
                            \ 'passive_filetypes' : ['yaml'] }
 
 " perl syntastic setting
-let g:syntastic_perl_checkers = [ 'perl', 'perlcritic', 'podchecker' ]
+" let g:syntastic_perl_checkers = [ 'perl', 'perlcritic', 'podchecker' ]
 let g:syntastic_enable_perl_checker = 1
 
 let g:syntastic_perl_perlcritic_args = '--harsh'

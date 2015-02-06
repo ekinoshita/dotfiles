@@ -1,15 +1,3 @@
-NeoBundle 'nanotech/jellybeans.vim'
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'tomasr/molokai'
-NeoBundle 'sickill/vim-monokai'
-NeoBundle 'jonathanfilip/vim-lucius'
-NeoBundle 'morhetz/gruvbox'
-NeoBundle 'sjl/badwolf'
-NeoBundle 'jnurmine/Zenburn'
-NeoBundle 'w0ng/vim-hybrid'
-NeoBundle 'dsolstad/vim-wombat256i'
-NeoBundle 'flazz/vim-colorschemes'
-
 " solarized settings
 " ------------------------------
 let g:solarized_termcolors=256

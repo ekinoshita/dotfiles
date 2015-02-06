@@ -80,6 +80,7 @@ set viminfo+=n/tmp
 " Plugins
 source $HOME/.vim/plugin/recognize_charcode.vim
 source $HOME/.vim/plugin/neobundles.vim
+source $HOME/.vim/plugin/colorscheme.vim
 source $HOME/.vim/plugin/unite_config.vim
 source $HOME/.vim/plugin/jump2pm.vim
 source $HOME/.vim/plugin/mytabmove.vim

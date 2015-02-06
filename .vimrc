@@ -43,6 +43,9 @@ set diffopt=filler,iwhite " vimdiffしたときに空白文字を無視する
 set laststatus=2
 set noshowmode
 
+" Key Mapping
+let g:mapleader = ','
+
 noremap <c-a> ^
 noremap <c-e> $
 
@@ -50,12 +53,12 @@ nnoremap ; :
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
 nnoremap tt :vne<CR>
-nnoremap ,v :tabe ~/.vimrc<CR>
-nnoremap ,r :source ~/.vimrc<CR>:NeoBundleInstall<CR>
+nnoremap <Leader>v :tabe ~/.vimrc<CR>
+nnoremap <Leader>r :source ~/.vimrc<CR>:NeoBundleInstall<CR>
 nnoremap <ESC><ESC> :nohlsearch<CR>
-nnoremap ,n :MyTabMoveRight<CR>
-nnoremap ,N :MyTabMoveLeft<CR>
-nnoremap ,q :QuickRun<CR>
+nnoremap <Leader>n :MyTabMoveRight<CR>
+nnoremap <Leader>N :MyTabMoveLeft<CR>
+nnoremap <Leader>q :QuickRun<CR>
 nnoremap gf :vertical wincmd f<CR>
 nnoremap <S-S> :NERDTree<CR>
 

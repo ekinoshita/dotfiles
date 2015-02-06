@@ -42,6 +42,7 @@ NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'toyamarinyon/vim-swift'
 NeoBundle 'wookiehangover/jshint.vim'
 NeoBundle 'stephpy/vim-yaml'
+" NeoBundle 'Kuniwak/vim-prove-syntax'
 
 " css/javascript/html5
 

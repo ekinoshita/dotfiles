@@ -8,12 +8,7 @@ endif
 call neobundle#begin(expand('~/.vim/bundle/'))
     filetype plugin indent on
     " Installation check.
-    if neobundle#exists_not_installed_bundles()
-      echomsg 'Not installed bundles : ' .
-            \ string(neobundle#get_not_installed_bundle_names())
-      echomsg 'Please execute ":NeoBundleInstall" command.'
-      "finish
-    endif
+    NeoBundleCheck
 
     if filereadable($HOME.'/.vimrc.bundle')
         source $HOME/.vimrc.bundle

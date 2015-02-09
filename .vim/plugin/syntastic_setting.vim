@@ -16,8 +16,8 @@ let g:syntastic_loc_list_height = 3
 " automaticaly stntax check
 let g:syntastic_check_on_open = 1
 let g:syntastic_mode_map = { 'mode' : 'active',
-                           \ 'active_filetypes' : ['perl','htmlcheetah'],
-                           \ 'passive_filetypes' : ['yaml'] }
+                           \ 'active_filetypes' : ['perl'],
+                           \ 'passive_filetypes' : ['yaml', 'htmlcheetah'] }
 
 " perl syntastic setting
 " let g:syntastic_perl_checkers = [ 'perl', 'perlcritic', 'podchecker' ]

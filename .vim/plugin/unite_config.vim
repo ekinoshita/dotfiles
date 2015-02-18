@@ -3,7 +3,7 @@ nnoremap <C-P> :<C-u>Unite buffer<CR>
 nnoremap <C-N> :<C-u>Unite -buffer-name=file file<CR>
 nnoremap <C-C> :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap <C-Z> :<C-u>Unite file_mru<CR>
-nnoremap <silent> ,g :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+nnoremap <C-g> :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
 
 " unite-grepにagを使う
 if executable('ag')

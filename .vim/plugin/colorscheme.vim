@@ -10,7 +10,7 @@ set background=dark
 if has("mac")
     colorscheme solarized
 elseif has("unix")
-    colorscheme hybrid
+    colorscheme jellybeans
 endif
 
 " vimdiffの色設定

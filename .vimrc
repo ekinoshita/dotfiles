@@ -62,10 +62,10 @@ nnoremap <Leader>q :QuickRun<CR>
 nnoremap gf :vertical wincmd f<CR>
 nnoremap <S-S> :NERDTree<CR>
 
-inoremap <> <><Left>
-inoremap {} {}<Left>
-inoremap [] []<Left>
-inoremap () ()<Left>
+inoremap < <><Left>
+inoremap { {}<Left>
+inoremap [ []<Left>
+inoremap ( ()<Left>
 inoremap "" ""<Left>
 inoremap '' ''<Left>
 

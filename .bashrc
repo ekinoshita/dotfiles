@@ -36,6 +36,8 @@ if [ `uname -s` = 'Darwin' ]; then
     alias keyboardoff='sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
     alias keyboardon='sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
 
+    # grep color always
+    alias grep="grep --color=always"
 fi
 
 

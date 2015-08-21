@@ -24,6 +24,7 @@ NeoBundle 'wookiehangover/jshint.vim'
 NeoBundle 'stephpy/vim-yaml'
 NeoBundle 'Kuniwak/vim-prove-syntax'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'TwitVim'
 
 " css/javascript/html5
 NeoBundle 'hail2u/vim-css3-syntax'

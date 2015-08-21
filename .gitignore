@@ -6,3 +6,4 @@
 .vim/backup/*
 .vim/viminfo.txt
 !.vim/template/perl.tmpl
+*.un~

@@ -11,7 +11,6 @@ case $(uname -s) in
         ;;
     Darwin)
         # default path = /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
-        PATH=$HOME/.nodebrew/current/bin:$PATH
         PATH=$PATH:/usr/local/bin
         PATH=$PATH:`find /Applications/Xcode.app -name swift | grep bin | xargs -I{} dirname {}`
         ;;
@@ -21,3 +20,12 @@ export PATH
 
 export HUB_TEST_HOST=github.lo.mixi.jp:80
 
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+export PATH="$HOME/.rbenv/shims:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
+
+export EDITOR=vim
+
+eval "$(direnv hook bash)"
+export PATH=~/.pyenv/shims/:$PATH

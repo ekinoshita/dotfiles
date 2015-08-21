@@ -36,6 +36,7 @@ if [ `uname -s` = 'Darwin' ]; then
     alias keyboardoff='sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
     alias keyboardon='sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
 
+    alias grep="grep --color=auto"
 fi
 
 # grep color always
@@ -113,11 +114,4 @@ then
         rm -f $SOCK
         ln -sf $SSH_AUTH_SOCK $SOCK
         export SSH_AUTH_SOCK=$SOCK
-fi
-
-# anyenv
-if [ -d $HOME/.anyenv ] ; then
-    export PATH="$HOME/.anyenv/bin:$PATH"
-    export PATH="$HOME/.anyenv/envs/rbenv/versions/2.1.1/bin:$PATH"
-    eval "$(anyenv init -)"
 fi

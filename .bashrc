@@ -36,10 +36,10 @@ if [ `uname -s` = 'Darwin' ]; then
     alias keyboardoff='sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
     alias keyboardon='sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
 
-    # grep color always
-    alias grep="grep --color=always"
 fi
 
+# grep color always
+alias grep="grep --color=auto"
 
 # to make duplicative command history to one time
 export HISTCONTROL=ignoreboth
@@ -71,7 +71,7 @@ alias dotfiles='cd ~/git/dotfiles;tig'
 
 
 # import from .mixibashrc
-if [ `uname -s` = 'Linux' ]; then
+if [ -e '~/.mixibashrc' ]; then
     . ~/.mixibashrc
     alias mixibashrc='vim ~/.mixibashrc'
 fi
@@ -89,23 +89,30 @@ fi
 
 # prompt with git branch
 if [ -f $BASH_COMPLETION_DIR/git ]; then
-    export PS1='\[\033[01;32m\]\u@\h\[\033[01;33m\] \w$(__git_ps1 " (%s)") \n\[\033[01;34m\]\$\[\033[00m\] '
+    export PS1='\[\033[01;34m\]\u@\h\[\033[00m\] \w\n$(__git_ps1 " (%s)")\n\[\033[01;34m\]$\[\033[00m\] '
     #export PS1='\[\e[1;32m\][\u@\h \W$(__git_ps1 " (%s)")]\[\e[00m\]\n\$ '
 else
-    export PS1='\[\033[01;32m\]\u@\h\[\033[01;33m\] \w$(__git_ps1 " (%s)") \n\[\033[01;34m\]\$\[\033[00m\] '
+    export PS1='\[\033[01;34m\]\u@\h\[\033[00m\] \w\n$(__git_ps1 " (%s)")\n\[\033[01;34m\]$\[\033[00m\] '
 fi
 
 
 # Omit the ssh passphrase input for the git push
-if [ `uname -s` = 'Darwin' ]; then
-    if [ -f ~/.ssh-agent ]; then
-        . ~/.ssh-agent
-    fi
-    if [ -z "$SSH_AGENT_PID" ] || ! kill -0 $SSH_AGENT_PID; then
-        ssh-agent > ~/.ssh-agent
-        . ~/.ssh-agent
-    fi
-    ssh-add -l >& /dev/null || ssh-add
+# if [ `uname -s` = 'Darwin' ]; then
+#     if [ -f ~/.ssh-agent ]; then
+#         . ~/.ssh-agent
+#     fi
+#     if [ -z "$SSH_AGENT_PID" ] || ! kill -0 $SSH_AGENT_PID; then
+#         ssh-agent > ~/.ssh-agent
+#         . ~/.ssh-agent
+#     fi
+#     ssh-add -l >& /dev/null || ssh-add
+# fi
+SOCK="/tmp/ssh-agent-$USER"
+if test $SSH_AUTH_SOCK && [ $SSH_AUTH_SOCK != $SOCK ]
+then
+        rm -f $SOCK
+        ln -sf $SSH_AUTH_SOCK $SOCK
+        export SSH_AUTH_SOCK=$SOCK
 fi
 
 # anyenv

@@ -20,6 +20,3 @@
 	pr = pull-request
 [push]
     default = current
-[hub]
-	host = github.lo.mixi.jp
-	host = github.lo.mixi.jp

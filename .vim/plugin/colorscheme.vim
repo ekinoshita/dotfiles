@@ -4,6 +4,7 @@ let g:solarized_termcolors=256
 " ------------------------------
 
 syntax on
+set hlsearch
 set t_Co=256
 set background=dark
 

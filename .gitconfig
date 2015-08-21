@@ -18,5 +18,6 @@
     hard = reset --hard HEAD
     cp = cherry-pick
 	pr = pull-request
+	push-force= push --force-with-lease
 [push]
     default = current

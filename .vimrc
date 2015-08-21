@@ -38,6 +38,7 @@ if exists('&ambiwidth')
   set ambiwidth=double " ●■→などで表示が崩れないようにする
 endif
 set diffopt=filler,iwhite " vimdiffしたときに空白文字を無視する
+set hlsearch
 
 " status line setting
 set laststatus=2
@@ -61,6 +62,7 @@ nnoremap <Leader>N :MyTabMoveLeft<CR>
 nnoremap <Leader>q :QuickRun<CR>
 nnoremap gf :vertical wincmd f<CR>
 nnoremap <S-S> :NERDTree<CR>
+nnoremap <Leader>S :SyntasticReset<CR>
 
 inoremap < <><Left>
 inoremap { {}<Left>

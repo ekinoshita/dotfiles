@@ -89,12 +89,8 @@ fi
 
 
 # prompt with git branch
-if [ -f $BASH_COMPLETION_DIR/git ]; then
-    export PS1='\[\033[01;34m\]\u@\h\[\033[00m\] \w\n$(__git_ps1 " (%s)")\n\[\033[01;34m\]$\[\033[00m\] '
-    #export PS1='\[\e[1;32m\][\u@\h \W$(__git_ps1 " (%s)")]\[\e[00m\]\n\$ '
-else
-    export PS1='\[\033[01;34m\]\u@\h\[\033[00m\] \w\n$(__git_ps1 " (%s)")\n\[\033[01;34m\]$\[\033[00m\] '
-fi
+export PS1='\[\033[01;34m\]\u@\h\[\033[00m\] \w\[\e[1;32m\]$(__git_ps1 " (%s)")\[\e[00m\]\n\[\033[01;34m\]$\[\033[00m\] '
+# export PS1='\[\e[1;32m\][\u@\h \W$(__git_ps1 " (%s)")]\[\e[00m\]\n\$ '
 
 
 # Omit the ssh passphrase input for the git push
